@@ -2,7 +2,7 @@
 title: Java
 description: Java Programming language cheatsheet contains useful code syntax with examples which is handy while coding.
 created: 2020-04-28
-updated: 2020-04-28
+updated: 2025-03-09
 ---
 
 Java is a very popular programming language. Java can be used to develop anything and almost everything like web applications, web servers, application servers, mobile applications and so on. 
@@ -25,7 +25,8 @@ public class HelloWorld {
 * **class keyword** - to declare a class in java.
 * **public keyword** - access modifier represents visibility. Public is visible to all.
 * **static keyword** - no need to create an object to invoke the static method. There is no need to create an object to invoke the main method and it's invoked by JVM and saves memory.
-* **void** - return type of the method and it doesn't return any value.
+* **void** - return type of a method, doesn't return any value.
+* **int** - return type of a method, returns an integer.
 * **main** - starting point of the program.
 * **String[] args** - for command line arguments
 * **System.out.println()** - used to print statement. 
@@ -80,8 +81,12 @@ char g = 'A';
 ```
 ### 2. Non-Primitive data types
 
-Non-primitive data types specifies the complex data values. For example, strings, arrays and classes can be referred as Non-primitive data types.
+Non-primitive data types specifies the complex data values. For example, strings, arrays and objects can be referred as Non-primitive data types.
+Although a string may seem like a primitive data type, it is a class and the String class is neeeded because Java does not support strings natively.
 
+```java
+String h = "Hello, Java!";
+```
 ## Variables
 ```java
 data-type variable-name = value;
@@ -89,9 +94,15 @@ data-type variable-name = value;
 ### Naming convention of variables
 
 * Case sensitive.
-* keywords cannot be used as variable names
-* Must should begin with a `lower case letter`. For second word should be a capital like this: firstName, pinCode etc.
-* Cannot contain white spaces like first name. 
+* keywords cannot be used as variable names, however you can include keywords in variable names, e.g:
+  ```java
+  int My_int = 84;
+  ```
+* It is recommended for variables to begin with a `lower case letter`. For second word should be a capital like this: firstName, pinCode etc.
+* Cannot contain white spaces like first name. This will make the JRE interpret the other word as a keyword, e.g
+  ```java
+  int My int = 84; // Compiler identifies the second 'int' as a keyword, but this wouldn't be correct syntax.
+  ```
 * special characters like `$` and `_` can be used to begin a variable name.
 
 ### Types of Variables
@@ -103,9 +114,9 @@ data-type variable-name = value;
 ```java
 Class Sum {
     int n1 = 10; // value of Instance  Variables are are instance specific.
-    static int n2 = 20; //static variable is Common for all the instances of the class.
+    static int n2 = 20; //static variable will be used across all instances of the class.
     void sum(){
-        int n3 = 30; //local variable and they are Inside the body of a method.
+        int n3 = 30; //local variable is inside a method and will be deleted after mthod execution.
         int total = n1+n2+n3;
     }
 }
@@ -135,7 +146,7 @@ Class Sum {
 
 ## Arrays
 
-Array is a collection of similar data which is stored in continuous memory addresses.
+Array is a structure of data which is stored in continuous memory addresses.
 
 ```java
 // one dimensional array
@@ -224,7 +235,7 @@ default:
 
 ### 1. For
 ```java
-for(Initialization; Condition; Increment/decrement){  
+for(Initialization; Condition; Loop){  
 //code  
 } 
 ```
@@ -241,8 +252,9 @@ do{
 //code 
 }while(condition); 
 ```
-## Collections
-|Collection|Description|
+Do-while is similar to while loop but it will always be executed at least once, regardless of the condition being true or false.
+## Data Structures
+|Data Strucctures|Description|
 |-----|-----|
 |Set| Set is a collection of elements which can not contain duplicate values. Set is implemented in HashSets, LinkedHashSets, TreeSet etc|
 |List| List is a ordered collection of elements which can have duplicates. Lists are classified into ArrayList, LinkedList, Vectors|
@@ -300,7 +312,7 @@ public class Main {
  
  ## HashMap
  
-  A HashMap however, store items in "key/value" pairs, and you can access them by an index of another type (e.g. a String).
+  However, a HashMap store items in "key/value" pairs and you can access them by an index of another type (e.g. a String).
   
   ```java
   
